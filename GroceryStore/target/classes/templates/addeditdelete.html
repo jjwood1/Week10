@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert New or Edit Item</title>
+</head>
+<body>
+<form th:object="${newItem}" th:action="@{/update/{id}(id=${newItem.id})}" method=POST>
+Name: <input name="name" size="20" th:field="*{name}"><br />
+quantity: <input name="quantity" size="20" th:field="*{quantity}"><br />
+price: <input name="price" size="20" th:field="*{price}"><br />
+Back Room Location: <input name="BackRoomLocation" size="20" th:field="*{BackRoomLocation}"><br />
+
+
+<input name="Submit" type="submit" value="submit" />
+</form>
+<a href="../viewAll">View All Items</a>
+
+</body>
+</html>
